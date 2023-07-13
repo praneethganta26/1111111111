@@ -1,31 +1,27 @@
-version: '3'
-services: 
-   movie:
-     image: praneethganta/phonepaymovie
-
-     ports:
-       - "8000:80"
-     volumes:
-       - "movie vol"
-     deploy:
-       replicas: 3
-
-        
-   train:
-     image: praneethganta/phonepaytrain
-     ports:
-       - "8001:80"
-     volumes:
-       - "train vol"
-     deploy:
-       replicas: 3
-
-         
-   dth:
-     image:praneethganta/phonepaydth
-     ports:
-       - "8002:80"
-     volumes:
-       - "dth  vol"
-     deploy:
-       replicas: 3
+---
+version: "3"
+services:
+  movie:
+    image: praneethganta/phonepaymovie
+    ports:
+      - 8000:80
+    volumes:
+      - movie vol
+    deploy:
+      replicas: 3
+  train:
+    image: praneethganta/phonepaytrain
+    ports:
+      - 8001:80
+    volumes:
+      - train vol
+    deploy:
+      replicas: 3
+  dth:
+    image: praneethganta/phonepaydth
+    ports:
+      - 8002:80
+    volumes:
+      - dth  vol
+    deploy:
+      replicas: 3
